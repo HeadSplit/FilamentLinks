@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\ClickController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Link;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/{short_url}', ClickController::class);

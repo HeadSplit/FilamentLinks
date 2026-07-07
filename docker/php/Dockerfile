@@ -24,10 +24,6 @@ RUN apt-get update && apt-get install -y \
         gd \
         intl
 
-
-RUN pecl install redis && docker-php-ext-enable redis
-
-
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 COPY docker/php/conf.d/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
